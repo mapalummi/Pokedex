@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeDex 2</title>
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js"></script>
+    <script src="./template.js"></script>
+  </head>
+
+  <body onload="init()">
+    <header>
+      <div>
+        <h1>PokeDex 2</h1>
+      </div>
+
+      <div>
+        <!-- From Uiverse.io by Yaseen549 -->
+        <input id="searchField"" placeholder="Type something here...." class="input" name="text" type="text" />
+      </div>
+    </header>
+
+    <div id="pokemon_content"></div>
+
+    <button>Click me</button>
+
+    <div onclick="closeDialog()" id="body_overlay" class="d_none"></div>
+    <div id="img_dialog" class="dialog d_none"></div>
+  </body>
+</html>
