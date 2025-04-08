@@ -29,7 +29,9 @@ h1 {
 
 
 
-/* #body_overlay {
+
+
+#body_overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -37,6 +39,18 @@ h1 {
   left: 0;
   background-color: rgba(0, 0, 0, 0.573);
   transition: opacity 300ms ease-in-out;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
 }
 
 .dialog {
@@ -53,7 +67,8 @@ h1 {
   height: 400px;
   transition: opacity 300ms ease-in-out;
   text-align: center;
-} */
+  animation: pulsate 3s infinite;
+}
 
 
 
@@ -73,12 +88,10 @@ h1 {
 
 
 
-
-
 .card {
   color: white;
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 16px;
   background-color: #050536;
   border: 3px solid transparent;
@@ -143,37 +156,3 @@ button:active {
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-
-
-
-
-/* .pokemon_card{
-  width: 150px;
-  height: 200px;
-  background-color: white;
-  border: 1px solid red;
-}
-
-.pokemon_card:hover{
-  cursor: pointer;
-  opacity: 0.5;
-  scale: 1.1;
-} */
-
-
-/* .images {
-  width: 150px;
-  height: 150px;
-  border: 1px solid rgba(0, 0, 255, 0.307);
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.749);
-  background-size: cover;
-  cursor: pointer;
-  transition: scale 250ms ease-in-out;
-}
-
-.images:hover {
-  border: 1px solid white;
-  opacity: 0.5;
-  scale: 1.1;
-} */
