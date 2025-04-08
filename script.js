@@ -15,11 +15,14 @@ async function getPokemonData() {
       const pokemonType = element.type.name;
 
       let typeContent = document.getElementById(`type${i}`);
+      let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
+
       typeContent.innerHTML += /*html*/ `
         <p>${pokemonType}</p>
       `;
       
-      getTypeColor(pokemonType);
+      const primaryType = pokemon.types[0].type.name;
+      getTypeColor(cardElement, primaryType);
     }
   }
 }
@@ -27,7 +30,7 @@ async function getPokemonData() {
 function renderMyPokemon(pokemon, index) {
   let pokemonContent = document.getElementById("pokemon_content");
   pokemonContent.innerHTML += /*html*/ `
-            <div id="pokeCard" class="card_white" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+            <div id="pokeCard${index}" class="card" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
               <div class="card_content">
               <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
@@ -35,23 +38,58 @@ function renderMyPokemon(pokemon, index) {
               <div class="img_container"><img src="${pokemon.sprites.front_default}"></div>
               </div>
             </div>
-        `;
-
-        
+        `;    
 }
 
-//Funktioniert noch nicht richtig:
-function getTypeColor(pokemonType){
-  let typeColor = pokemonType;
-  console.log(pokemonType);
 
-  let standardClass = document.getElementById('pokeCard')
 
-  if (typeColor === 'grass') {
-    console.log('Background grün färben');
-    standardClass.classList.add("card_green")
+
+// function getTypeColor(cardElement, pokemonType){
+//   console.log(cardElement);
+//   console.log(pokemonType);
+
+//   if (pokemonType === 'grass') {
+//     cardElement.classList.add("card_green")
+//   } else if (pokemonType ==='fire') {
+//     cardElement.classList.add("card_red")
+//   } else if (pokemonType ==='water'){
+//     cardElement.classList.add("card_blue")
+//   } else if (pokemonType ==='poison'){
+//     cardElement.classList.add("card_pink")
+//   }
+// }
+
+
+function getTypeColor(cardElement, primaryType) {
+  cardElement.classList.remove(
+    'card',
+  );
+
+  switch (primaryType) {
+    case 'grass':
+      cardElement.classList.add('card_green');
+      break;
+    case 'poison':
+      cardElement.classList.add('card_pink');
+      break;
+    case 'fire':
+      cardElement.classList.add('card_red');
+      break;
+    case 'water':
+      cardElement.classList.add('card_blue');
+      break;
+    case 'bug':
+      cardElement.classList.add('card_brown');
+      break;
+    case 'normal':
+      cardElement.classList.add('card_normal');
+      break;
+    case 'electric':
+      cardElement.classList.add('card_yellow');
+      break;  
   }
 }
+
 
 
 
@@ -82,26 +120,3 @@ function closeDialog() {
   document.documentElement.style.overflow = "scroll";
   document.body.scroll = "yes";
 }
-
-
-
-
-
-
-
-
-
-
-// Kann evtl raus:
-// document.addEventListener('DOMContentLoaded', (event) => {
-//   let element = document.getElementById("type${index}");
-//   let text = element.textContent || element.innerText;
-
-//   if (text.includes("grass")) {
-//       element.classList.add("card_green");
-//       element.classList.remove("card_white");
-//   } else {
-//       element.classList.add("card_white");
-//       element.classList.remove("card_green");
-//   }
-// });
