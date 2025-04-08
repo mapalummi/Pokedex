@@ -19,6 +19,10 @@ async function getPokemonData(){
       typeContent.innerHTML += /*html*/`
         <p>${pokemonType}</p>
       `
+      // let typeDialogContent = document.getElementById(`typeDialog${i}`);
+      // typeDialogContent.innerHTML += /*html*/`
+      //   <p>${pokemonType}</p>
+      // `
     }
   }
 }
@@ -47,6 +51,7 @@ function showCard(index, name, sprite, id){
                 <p>${name}</p>
                 <p>#${id}</p>
                 <img src="${sprite}">
+                <div id="type${index}"></div>
               </div>
             </div>
   `
