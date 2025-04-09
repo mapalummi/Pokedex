@@ -1,4 +1,5 @@
 function init() {
+  showLoader();
   getPokemonData();
 }
 
@@ -29,6 +30,7 @@ async function getPokemonData() {
     }
   }
   currentOffset += 25;
+  hideLoader();
 }
 
 
@@ -113,6 +115,19 @@ function closeDialog() {
 
 
 
+function showLoader(){
+  document.getElementById("body_overlay").classList.remove("d_none");
+  document.getElementById("loader").classList.remove("d_none");
+}
+
+function hideLoader(){
+  document.getElementById("body_overlay").classList.add("d_none");
+  document.getElementById("loader").classList.add("d_none");
+}
+
+
+
 function renderNextCards(){
+  showLoader();
   getPokemonData();
 }
