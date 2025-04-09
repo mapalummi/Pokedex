@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: white;
   margin: 0;
   box-sizing: border-box;
 }
@@ -7,20 +7,28 @@ body {
 header {
   width: 100%;
   height: 150px;
-  background-color: rgb(0, 0, 91);
+  background-color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.389);
 }
 
 h1 {
-  color: white;
-  font-size: 40px;
+  color: black;
+  font-size: 66px;
   text-align: center;
   margin-block-start: 8px;
   margin-block-end: 8px;
+  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
 }
+
+.textcolor {
+  background-image:linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ }
 
 .d_none {
   display: none !important;
