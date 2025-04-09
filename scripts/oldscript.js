@@ -1,47 +1,45 @@
+// Dieser Code kann später raus:
+// async function getPokemonData() {
+//   for (let i = 1; i <= 25; i++) {
+//     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+//     let response = await fetch(url);
+//     let pokemon = await response.json();
 
-  
-  // function renderImages() {
-  //   let contentRef = document.getElementById("content");
-  //   for (let i = 0; i < images.length; i++) {
-  //     contentRef.innerHTML += getImages(i);
-  //   }
-  // }
-  
-  // function fullSizeImages(i) {
-  //   let imgRef = document.getElementById("img_dialog");
-  //   imgRef.innerHTML = getFullSizeImage(i);
-  
-  //   if (i <= 0) {
-  //     document.getElementById("d_left_button").classList.add("d_none");
-  //   }
-  
-  //   if (i >= 11) {
-  //     document.getElementById("d_right_button").classList.add("d_none");
-  //   }
-  
-  //   document.getElementById("img_dialog").classList.remove("d_none");
-  //   document.getElementById("body_overlay").classList.remove("d_none");
-  // }
-  
-  // function closeDialog() {
-  //   document.getElementById("img_dialog").classList.add("d_none");
-  //   document.getElementById("body_overlay").classList.add("d_none");
-  // }
-  
-  // function leftButtonClick(i) {
-  //   let leftButtonRef = document.getElementById("img_dialog");
-  //   leftButtonRef.innerHTML = leftButton(i)
-  
-  //   if (i <= 1) {
-  //     document.getElementById("d_left_button").classList.add("d_none");
-  //   }
-  // }
-  
-  // function rightButtonClick(i) {
-  //   let rightButtonRef = document.getElementById("img_dialog");
-  //   rightButtonRef.innerHTML = rightButton(i);
-  
-  //   if (i >= 11) {
-  //     document.getElementById("d_right_button").classList.add("d_none");
-  //   }
-  // }
+//     renderMyPokemon(pokemon, i);
+
+//     for (let j = 0; j < pokemon.types.length; j++) {
+//       const element = pokemon.types[j];
+//       const pokemonType = element.type.name;
+
+//       let typeContent = document.getElementById(`type${i}`);
+//       let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
+
+//       typeContent.innerHTML += /*html*/ `
+//         <p>${pokemonType}</p>
+//       `;
+      
+//       const primaryType = pokemon.types[0].type.name; //NEU !
+//       getTypeColor(cardElement, primaryType);
+//     }
+//   }
+// }
+
+
+
+
+
+//Kann später raus:
+// function getTypeColor(cardElement, pokemonType){
+//   console.log(cardElement);
+//   console.log(pokemonType);
+
+//   if (pokemonType === 'grass') {
+//     cardElement.classList.add("card_green")
+//   } else if (pokemonType ==='fire') {
+//     cardElement.classList.add("card_red")
+//   } else if (pokemonType ==='water'){
+//     cardElement.classList.add("card_blue")
+//   } else if (pokemonType ==='poison'){
+//     cardElement.classList.add("card_pink")
+//   }
+// }
