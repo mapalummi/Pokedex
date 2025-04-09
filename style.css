@@ -26,8 +26,7 @@ h1 {
   display: none !important;
 }
 
-
-#pokemon_content{
+#pokemon_content {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -37,14 +36,12 @@ h1 {
   gap: 16px;
 }
 
-
-
 .loader {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   display: block;
-  margin:15px auto;
+  margin: 15px auto;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -52,37 +49,36 @@ h1 {
   animation: rotation 1s linear infinite;
   z-index: 20;
 }
+
 .loader::after,
 .loader::before {
-  content: '';  
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;
   top: 0;
-  background: #FF3D00;
+  background: #ff3d00;
   width: 16px;
   height: 16px;
   transform: translate(-50%, 50%);
   border-radius: 50%;
 }
+
 .loader::before {
   left: auto;
   right: 0;
-  background: #FFF;
+  background: #fff;
   transform: translate(50%, 100%);
 }
 
 @keyframes rotation {
-0% {
-  transform: rotate(0deg);
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-100% {
-  transform: rotate(360deg);
-}
-} 
-    
-
-
 
 #body_overlay {
   position: fixed;
@@ -95,7 +91,7 @@ h1 {
   z-index: 10;
 }
 
-#loader_overlay{
+#loader_overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -105,8 +101,6 @@ h1 {
   transition: opacity 300ms ease-in-out;
   z-index: 10;
 }
-
-
 
 @keyframes pulsate {
   0% {
@@ -138,8 +132,6 @@ h1 {
   z-index: 15;
 }
 
-
-
 .input {
   color: white;
   border: 2px solid #8707ff;
@@ -153,460 +145,7 @@ h1 {
   box-shadow: 2px 2px 15px #8707ff inset;
 }
 
-
-
-
-.card {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(white, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-
-.card_grass {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(94, 189, 87), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_grass:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_fire {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(251, 165, 76), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_fire:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_water {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(83, 156, 222), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_water:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-.card_poison {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(182, 99, 207), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_poison:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_bug {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(146, 188, 44), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_bug:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-.card_normal {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(159, 162, 159), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_normal:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_electric {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(243, 217, 78), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_electric:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_ground {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(218, 124, 78), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_ground:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_fairy {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(#ee90e6, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_fairy:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-.card_fighting {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(211, 66, 95), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_fighting:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_psychic {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(251, 133, 129), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_psychic:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_rock {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(201, 187, 138), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_rock:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_ghost {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(96, 109, 188), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_ghost:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-.card_ice {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(117, 208, 193), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_ice:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_dragon {
-  color: black;
-  width: 250px;
-  height: 250px;
-  border-radius: 16px;
-  border: 3px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(12, 105, 199), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card_dragon:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
-}
-
-
-.card_content{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card_content img{
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.id_container {
-  width: 90%;
-  height: 35px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.name_container{
-width: 90%;
-height: 40px;
-}
-
-.type_container{
-  width: 90%;
-  height: 80px;
-}
-
-.type_container p{
-  width: 50px;
-  height: 20px;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-
-.img_container{
-  width: 90%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-
-
-
-
-
-
-/* From Uiverse.io by ke1221 */ 
+/* From Uiverse.io by ke1221 */
 button {
   color: #090909;
   padding: 0.7em 1.7em;
@@ -627,4 +166,3 @@ button:active {
   color: #666;
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
-
