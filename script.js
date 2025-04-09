@@ -5,32 +5,37 @@ function init() {
 
 let currentOffset = 1;
 
+
+
 async function getPokemonData() {
   for (let i = currentOffset; i < currentOffset + 25; i++) {
-    let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    let response = await fetch(url);
-    let pokemon = await response.json();
+    try {
+        let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        let response = await fetch(url);
+        let pokemon = await response.json();
 
-    renderMyPokemon(pokemon, i);
+        renderMyPokemon(pokemon, i);
 
+        let typeContent = document.getElementById(`type${i}`);
+        let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
 
-    let typeContent = document.getElementById(`type${i}`);
-    let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
+        for (let j = 0; j < pokemon.types.length; j++) {
+            const element = pokemon.types[j];
+            const pokemonType = element.type.name;
 
-    for (let j = 0; j < pokemon.types.length; j++) {
-      const element = pokemon.types[j];
-      const pokemonType = element.type.name;
-
-      typeContent.innerHTML += /*html*/ `
-        <p>${pokemonType}</p>
-      `;
+            typeContent.innerHTML += /*html*/ `
+              <p>${pokemonType}</p>
+            `;
       
-      const primaryType = pokemon.types[0].type.name; //NEU !
-      getTypeColor(cardElement, primaryType);
+            const primaryType = pokemon.types[0].type.name; //NEU !
+            getTypeColor(cardElement, primaryType);
+        }
+    } catch (error) {
+        console.error(`Fehler beim Laden der Daten für Pokemon ${i}`, error);
     }
   }
-  currentOffset += 25;
-  hideLoader();
+    currentOffset += 25;
+    hideLoader();
 }
 
 
