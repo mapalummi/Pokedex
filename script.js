@@ -91,8 +91,7 @@ function searchPokemon(){
   if (filteredPokemon.length > 0) {
     renderFilteredPokemon(filteredPokemon);
    } else {
-    //Fehlermeldung für den User integrieren!
-      console.log('Kein Pokemon gefunden');
+      alert('Try another Letter');
     }
 
     if (input !== "") {
