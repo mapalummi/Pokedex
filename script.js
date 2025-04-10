@@ -17,14 +17,12 @@ async function getPokemonData() {
         let pokemon = await response.json();
 
         allPokemonData.push({...pokemon, index: i}); //In globales Array inkl. Indexwerte speichern!!!
-
         primaryType = pokemon.types[0].type.name; //NEU !
 
         renderMyPokemon(pokemon, i);
 
         let typeContent = document.getElementById(`type${i}`);
         // let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
-
         for (let j = 0; j < pokemon.types.length; j++) {
             const element = pokemon.types[j];
             const pokemonType = element.type.name;
@@ -77,7 +75,7 @@ function searchPokemon(){
   
     filteredPokemon.forEach(pokemon => {
       container.innerHTML += /*html*/ `
-        <div id="pokeCard${pokemon.index}" class="card" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+        <div id="pokeCard${pokemon.index}" class="new_${primaryType}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
           <div class="card_content">
             <div class="id_container"><p>#${pokemon.id}</p></div>
             <div class="name_container"><p>${pokemon.name}</p></div>
