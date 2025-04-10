@@ -45,6 +45,9 @@ function renderMyPokemon(pokemon, index) {
   let pokemonContent = document.getElementById("pokemon_content");
   pokemonContent.innerHTML += /*html*/ `
             <div id="pokeCard${index}" class="card" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+
+
+            
               <div class="card_content">
               <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
@@ -58,9 +61,7 @@ function renderMyPokemon(pokemon, index) {
 
 function searchPokemon(){
   let input = document.getElementById('search_field').value.toLowerCase();
-  // let filteredPokemon = allPokemonData.filter(pokemon => pokemon.name.toLowerCase().startsWith(input));
   let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
-
 
   if (filteredPokemon.length > 0) {
     console.log(filteredPokemon);
