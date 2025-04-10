@@ -7,7 +7,6 @@ let currentOffset = 1;
 let pokemonInputValue;
 let allPokemonData = [];
 
-// let primaryType;
 
 async function getPokemonData() {
   for (let i = currentOffset; i < currentOffset + 25; i++) {
@@ -17,7 +16,6 @@ async function getPokemonData() {
         let pokemon = await response.json();
 
         allPokemonData.push({...pokemon, index: i}); //In globales Array inkl. Indexwerte speichern!!!
-        primaryType = pokemon.types[0].type.name; //NEU !
 
         renderMyPokemon(pokemon, i);
 
@@ -39,11 +37,28 @@ async function getPokemonData() {
     hideLoader();
 }
 
+// Alte Funktion:
+// function renderMyPokemon(pokemon, index) {
+//   let pokemonContent = document.getElementById("pokemon_content");
+//   pokemonContent.innerHTML += /*html*/ `
+//             <div id="pokeCard${index}" class="new_${primaryType}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+//               <div class="card_content">
+//               <div class="id_container"><p>#${pokemon.id}</p></div>
+//               <div class="name_container"><p>${pokemon.name}</p></div>
+//               <div id="type${index}" class="type_container"></div>
+//               <div class="img_container"><img src="${pokemon.sprites.front_default}"></div>
+//               </div>
+//             </div>
+//         `;    
+// }
 
+
+//Neu:
 function renderMyPokemon(pokemon, index) {
+  const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
   pokemonContent.innerHTML += /*html*/ `
-            <div id="pokeCard${index}" class="new_${primaryType}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+            <div id="pokeCard${index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
               <div class="card_content">
               <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
@@ -54,28 +69,81 @@ function renderMyPokemon(pokemon, index) {
         `;    
 }
 
+//Alte Funktion:
+// function searchPokemon(){
+//   let input = document.getElementById('search_field').value.toLowerCase();
+//   let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
 
+//   if (filteredPokemon.length > 0) {
+//     renderFilteredPokemon(filteredPokemon);
+//    } else {
+//     //Fehlermeldung für den User integrieren!
+//       console.log('Kein Pokemon gefunden');
+//     }
+//   }
+
+
+//TEST:
 function searchPokemon(){
   let input = document.getElementById('search_field').value.toLowerCase();
   let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
 
   if (filteredPokemon.length > 0) {
-    console.log(filteredPokemon);
     renderFilteredPokemon(filteredPokemon);
    } else {
     //Fehlermeldung für den User integrieren!
       console.log('Kein Pokemon gefunden');
     }
+
+    if (input !== "") {
+      disableButton()
+    } else {
+      enableButton()
+  }
+}
+
+
+
+  function disableButton() {
+    document.getElementById('loadButton').disabled = true;
+  }
+
+  function enableButton() {
+    document.getElementById('loadButton').disabled = false;
   }
 
 
+//Alte Funktion:
+  // function renderFilteredPokemon(filteredPokemon) {
+  //   const container = document.getElementById('pokemon_content');
+  //   container.innerHTML = '';
+  
+  //   filteredPokemon.forEach(pokemon => {
+  //     container.innerHTML += /*html*/ `
+  //       <div id="pokeCard${pokemon.index}" class="new_${primaryType}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+  //         <div class="card_content">
+  //           <div class="id_container"><p>#${pokemon.id}</p></div>
+  //           <div class="name_container"><p>${pokemon.name}</p></div>
+  //           <div id="type${pokemon.index}" class="type_container">
+  //             ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
+  //           </div>
+  //           <div class="img_container"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
+  //         </div>
+  //       </div>
+  //     `;
+  //   });
+  // }
+
+
+  //Neu:
   function renderFilteredPokemon(filteredPokemon) {
     const container = document.getElementById('pokemon_content');
     container.innerHTML = '';
   
     filteredPokemon.forEach(pokemon => {
+      const primaryTypeLocal = pokemon.types[0].type.name;
       container.innerHTML += /*html*/ `
-        <div id="pokeCard${pokemon.index}" class="new_${primaryType}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+        <div id="pokeCard${pokemon.index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
           <div class="card_content">
             <div class="id_container"><p>#${pokemon.id}</p></div>
             <div class="name_container"><p>${pokemon.name}</p></div>
@@ -88,7 +156,6 @@ function searchPokemon(){
       `;
     });
   }
-
 
 
   function showDialogCard(index, name, sprite, id) {
