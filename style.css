@@ -21,7 +21,6 @@ h1 {
   text-align: center;
   margin-block-start: 8px;
   margin-block-end: 8px;
-  /* background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c); */
 }
 
 .textcolor {
@@ -110,18 +109,6 @@ h1 {
   z-index: 10;
 }
 
-@keyframes pulsate {
-  0% {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
-  }
-}
-
 .dialog {
   position: fixed;
   left: 50%;
@@ -138,6 +125,18 @@ h1 {
   text-align: center;
   animation: pulsate 3s infinite;
   z-index: 15;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+  }
 }
 
 .input {
