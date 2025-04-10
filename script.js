@@ -7,6 +7,8 @@ let currentOffset = 1;
 let pokemonInputValue;
 let allPokemonData = [];
 
+// let primaryType;
+
 async function getPokemonData() {
   for (let i = currentOffset; i < currentOffset + 25; i++) {
     try {
@@ -16,10 +18,12 @@ async function getPokemonData() {
 
         allPokemonData.push({...pokemon, index: i}); //In globales Array inkl. Indexwerte speichern!!!
 
+        primaryType = pokemon.types[0].type.name; //NEU !
+
         renderMyPokemon(pokemon, i);
 
         let typeContent = document.getElementById(`type${i}`);
-        let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
+        // let cardElement = document.getElementById(`pokeCard${i}`); //NEU !
 
         for (let j = 0; j < pokemon.types.length; j++) {
             const element = pokemon.types[j];
@@ -28,9 +32,6 @@ async function getPokemonData() {
             typeContent.innerHTML += /*html*/ `
               <p>${pokemonType}</p>
             `;
-      
-            const primaryType = pokemon.types[0].type.name; //NEU !
-            getTypeColor(cardElement, primaryType);
         }
     } catch (error) {
         console.error(`Fehler beim Laden der Daten für Pokemon ${i}`, error);
@@ -44,10 +45,7 @@ async function getPokemonData() {
 function renderMyPokemon(pokemon, index) {
   let pokemonContent = document.getElementById("pokemon_content");
   pokemonContent.innerHTML += /*html*/ `
-            <div id="pokeCard${index}" class="card" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
-
-
-            
+            <div id="pokeCard${index}" class="new_${primaryType}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
               <div class="card_content">
               <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
@@ -71,7 +69,6 @@ function searchPokemon(){
       console.log('Kein Pokemon gefunden');
     }
   }
-
 
 
   function renderFilteredPokemon(filteredPokemon) {
@@ -123,74 +120,17 @@ function searchPokemon(){
     document.body.scroll = "yes";
   }
 
-  function getTypeColor(cardElement, primaryType) {
-    cardElement.classList.remove(
-      'card',
-    );
-
-    switch (primaryType) {
-      case 'grass':
-        cardElement.classList.add('card_grass');
-        break;
-      case 'poison':
-        cardElement.classList.add('card_poison');
-        break;
-      case 'fire':
-        cardElement.classList.add('card_fire');
-        break;
-      case 'water':
-        cardElement.classList.add('card_water');
-        break;
-      case 'bug':
-        cardElement.classList.add('card_bug');
-        break;
-      case 'normal':
-        cardElement.classList.add('card_normal');
-        break;
-      case 'electric':
-        cardElement.classList.add('card_electric');
-        break;  
-      case 'ground':
-        cardElement.classList.add('card_ground');
-        break;
-      case 'fairy':
-        cardElement.classList.add('card_fairy');
-        break;
-      case 'fighting':
-        cardElement.classList.add('card_fighting');
-        break;
-      case 'psychic':
-        cardElement.classList.add('card_psychic');
-        break;
-      case 'rock':
-        cardElement.classList.add('card_rock');
-        break; 
-      case 'ghost':
-        cardElement.classList.add('card_ghost');
-        break;
-      case 'ice':
-        cardElement.classList.add('card_ice');
-        break;
-      case 'dragon':
-        cardElement.classList.add('card_dragon');
-        break;
-      default:
-        cardElement.classList.add('card'); // Fallback-Klasse WICHTIG!!!
-        break;
-    }
+  function showLoader(){
+    document.getElementById("loader_overlay").classList.remove("d_none");
+    document.getElementById("loader").classList.remove("d_none");
   }
 
-function showLoader(){
-  document.getElementById("loader_overlay").classList.remove("d_none");
-  document.getElementById("loader").classList.remove("d_none");
-}
+  function hideLoader(){
+    document.getElementById("loader_overlay").classList.add("d_none");
+    document.getElementById("loader").classList.add("d_none");
+  }
 
-function hideLoader(){
-  document.getElementById("loader_overlay").classList.add("d_none");
-  document.getElementById("loader").classList.add("d_none");
-}
-
-function renderNextCards(){
-  showLoader();
-  getPokemonData();
-}
+  function renderNextCards(){
+    showLoader();
+    getPokemonData();
+  }

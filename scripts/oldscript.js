@@ -1,3 +1,4 @@
+
 // Dieser Code kann später raus:
 // async function getPokemonData() {
 //   for (let i = 1; i <= 25; i++) {
@@ -43,3 +44,66 @@
 //     cardElement.classList.add("card_pink")
 //   }
 // }
+
+
+
+
+//Kann evtl raus:
+// getTypeColor(cardElement, primaryType);
+
+// function getTypeColor(cardElement, primaryType) {
+  //   cardElement.classList.remove(
+  //     'card',
+  //   );
+
+  //   switch (primaryType) {
+  //     case 'grass':
+  //       cardElement.classList.add('card_grass');
+  //       break;
+  //     case 'poison':
+  //       cardElement.classList.add('card_poison');
+  //       break;
+  //     case 'fire':
+  //       cardElement.classList.add('card_fire');
+  //       break;
+  //     case 'water':
+  //       cardElement.classList.add('card_water');
+  //       break;
+  //     case 'bug':
+  //       cardElement.classList.add('card_bug');
+  //       break;
+  //     case 'normal':
+  //       cardElement.classList.add('card_normal');
+  //       break;
+  //     case 'electric':
+  //       cardElement.classList.add('card_electric');
+  //       break;  
+  //     case 'ground':
+  //       cardElement.classList.add('card_ground');
+  //       break;
+  //     case 'fairy':
+  //       cardElement.classList.add('card_fairy');
+  //       break;
+  //     case 'fighting':
+  //       cardElement.classList.add('card_fighting');
+  //       break;
+  //     case 'psychic':
+  //       cardElement.classList.add('card_psychic');
+  //       break;
+  //     case 'rock':
+  //       cardElement.classList.add('card_rock');
+  //       break; 
+  //     case 'ghost':
+  //       cardElement.classList.add('card_ghost');
+  //       break;
+  //     case 'ice':
+  //       cardElement.classList.add('card_ice');
+  //       break;
+  //     case 'dragon':
+  //       cardElement.classList.add('card_dragon');
+  //       break;
+  //     default:
+  //       cardElement.classList.add('card'); // Fallback-Klasse WICHTIG!!!
+  //       break;
+  //   }
+  // }
