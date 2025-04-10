@@ -3,12 +3,9 @@ function init() {
   getPokemonData();
 }
 
-
 let currentOffset = 1;
 let pokemonInputValue;
-
-let allPokemonNames = []; //Nur die Namen werden eingespeichert!
-
+let allPokemonData = [];
 
 async function getPokemonData() {
   for (let i = currentOffset; i < currentOffset + 25; i++) {
@@ -17,7 +14,7 @@ async function getPokemonData() {
         let response = await fetch(url);
         let pokemon = await response.json();
 
-        allPokemonNames.push(pokemon.name); //Pokemon Namen in globales Array speichern!
+        allPokemonData.push({...pokemon, index: i}); //In globales Array inkl. Indexwerte speichern!!!
 
         renderMyPokemon(pokemon, i);
 
@@ -44,7 +41,6 @@ async function getPokemonData() {
 }
 
 
-
 function renderMyPokemon(pokemon, index) {
   let pokemonContent = document.getElementById("pokemon_content");
   pokemonContent.innerHTML += /*html*/ `
@@ -60,94 +56,128 @@ function renderMyPokemon(pokemon, index) {
 }
 
 
+function searchPokemon(){
+  let input = document.getElementById('search_field').value.toLowerCase();
+  // let filteredPokemon = allPokemonData.filter(pokemon => pokemon.name.toLowerCase().startsWith(input));
+  let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
 
-function getTypeColor(cardElement, primaryType) {
-  cardElement.classList.remove(
-    'card',
-  );
 
-  switch (primaryType) {
-    case 'grass':
-      cardElement.classList.add('card_grass');
-      break;
-    case 'poison':
-      cardElement.classList.add('card_poison');
-      break;
-    case 'fire':
-      cardElement.classList.add('card_fire');
-      break;
-    case 'water':
-      cardElement.classList.add('card_water');
-      break;
-    case 'bug':
-      cardElement.classList.add('card_bug');
-      break;
-    case 'normal':
-      cardElement.classList.add('card_normal');
-      break;
-    case 'electric':
-      cardElement.classList.add('card_electric');
-      break;  
-    case 'ground':
-      cardElement.classList.add('card_ground');
-      break;
-    case 'fairy':
-      cardElement.classList.add('card_fairy');
-      break;
-    case 'fighting':
-      cardElement.classList.add('card_fighting');
-      break;
-    case 'psychic':
-      cardElement.classList.add('card_psychic');
-      break;
-    case 'rock':
-      cardElement.classList.add('card_rock');
-      break; 
-    case 'ghost':
-      cardElement.classList.add('card_ghost');
-      break;
-    case 'ice':
-      cardElement.classList.add('card_ice');
-      break;
-    case 'dragon':
-      cardElement.classList.add('card_dragon');
-      break;
-    default:
-      cardElement.classList.add('card'); // Fallback-Klasse WICHTIG!!!
-      break;
+  if (filteredPokemon.length > 0) {
+    console.log(filteredPokemon);
+    renderFilteredPokemon(filteredPokemon);
+   } else {
+    //Fehlermeldung für den User integrieren!
+      console.log('Kein Pokemon gefunden');
+    }
   }
-}
 
 
 
-function showDialogCard(index, name, sprite, id) {
-  let pokemonCard = document.getElementById("pokemon_dialog");
-  pokemonCard.innerHTML = /*html*/ `
-    <div class="dialog">
-              <div class="">
-                <p>${name}</p>
-                <p>#${id}</p>
-                <img src="${sprite}">
-                <div id="type${index}"></div>
-              </div>
+  function renderFilteredPokemon(filteredPokemon) {
+    const container = document.getElementById('pokemon_content');
+    container.innerHTML = '';
+  
+    filteredPokemon.forEach(pokemon => {
+      container.innerHTML += /*html*/ `
+        <div id="pokeCard${pokemon.index}" class="card" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
+          <div class="card_content">
+            <div class="id_container"><p>#${pokemon.id}</p></div>
+            <div class="name_container"><p>${pokemon.name}</p></div>
+            <div id="type${pokemon.index}" class="type_container">
+              ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
             </div>
-  `;
-  document.getElementById("pokemon_dialog").classList.remove("d_none");
-  document.getElementById("body_overlay").classList.remove("d_none");
-
-  document.documentElement.style.overflow = "hidden";
-  document.body.scroll = "no";
-}
-
-function closeDialog() {
-  document.getElementById("pokemon_dialog").classList.add("d_none");
-  document.getElementById("body_overlay").classList.add("d_none");
-
-  document.documentElement.style.overflow = "scroll";
-  document.body.scroll = "yes";
-}
+            <div class="img_container"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
+          </div>
+        </div>
+      `;
+    });
+  }
 
 
+
+  function showDialogCard(index, name, sprite, id) {
+    let pokemonCard = document.getElementById("pokemon_dialog");
+    pokemonCard.innerHTML = /*html*/ `
+      <div class="dialog">
+                <div class="">
+                  <p>${name}</p>
+                  <p>#${id}</p>
+                  <img src="${sprite}">
+                  <div id="type${index}"></div>
+                </div>
+              </div>
+    `;
+    document.getElementById("pokemon_dialog").classList.remove("d_none");
+    document.getElementById("body_overlay").classList.remove("d_none");
+  
+    document.documentElement.style.overflow = "hidden";
+    document.body.scroll = "no";
+  }
+  
+  function closeDialog() {
+    document.getElementById("pokemon_dialog").classList.add("d_none");
+    document.getElementById("body_overlay").classList.add("d_none");
+  
+    document.documentElement.style.overflow = "scroll";
+    document.body.scroll = "yes";
+  }
+
+  function getTypeColor(cardElement, primaryType) {
+    cardElement.classList.remove(
+      'card',
+    );
+
+    switch (primaryType) {
+      case 'grass':
+        cardElement.classList.add('card_grass');
+        break;
+      case 'poison':
+        cardElement.classList.add('card_poison');
+        break;
+      case 'fire':
+        cardElement.classList.add('card_fire');
+        break;
+      case 'water':
+        cardElement.classList.add('card_water');
+        break;
+      case 'bug':
+        cardElement.classList.add('card_bug');
+        break;
+      case 'normal':
+        cardElement.classList.add('card_normal');
+        break;
+      case 'electric':
+        cardElement.classList.add('card_electric');
+        break;  
+      case 'ground':
+        cardElement.classList.add('card_ground');
+        break;
+      case 'fairy':
+        cardElement.classList.add('card_fairy');
+        break;
+      case 'fighting':
+        cardElement.classList.add('card_fighting');
+        break;
+      case 'psychic':
+        cardElement.classList.add('card_psychic');
+        break;
+      case 'rock':
+        cardElement.classList.add('card_rock');
+        break; 
+      case 'ghost':
+        cardElement.classList.add('card_ghost');
+        break;
+      case 'ice':
+        cardElement.classList.add('card_ice');
+        break;
+      case 'dragon':
+        cardElement.classList.add('card_dragon');
+        break;
+      default:
+        cardElement.classList.add('card'); // Fallback-Klasse WICHTIG!!!
+        break;
+    }
+  }
 
 function showLoader(){
   document.getElementById("loader_overlay").classList.remove("d_none");
@@ -163,20 +193,3 @@ function renderNextCards(){
   showLoader();
   getPokemonData();
 }
-
-
-
-
-
-function searchPokemon(){
-  let input = document.getElementById('search_field').value.toLowerCase();
-  let filteredPokemon = allPokemonNames.filter(name => name.startsWith(input));
-
-  if (filteredPokemon.length > 0) {
-    console.log(filteredPokemon);
-    //Renderfunktion gefilterte Pokemons:
-   } else {
-    //Fehlermeldung für den User integrieren!
-      console.log('Kein Pokemon gefunden');
-    }
-  }
