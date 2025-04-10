@@ -20,13 +20,13 @@
 
       <div>
         <!-- From Uiverse.io by Yaseen549 -->
-        <input id="searchField"" placeholder="Type something here...." class="input" name="text" type="text" />
+        <input id="search_field" onkeyup="searchPokemon()" placeholder="Search your Pokemon..." class="input" name="text" type="text" />
       </div>
     </header>
 
     <div id="pokemon_content"><span id="loader" class="loader d_none"></span></div>
 
-    <button onclick="renderNextCards()">Click me</button>
+    <button onclick="renderNextCards()">Load more</button>
 
     <div id="loader_overlay" class="d_none"></div>
     <div onclick="closeDialog()" id="body_overlay" class="d_none"></div>

@@ -3,8 +3,11 @@ function init() {
   getPokemonData();
 }
 
-let currentOffset = 1;
 
+let currentOffset = 1;
+let pokemonInputValue;
+
+let allPokemonNames = []; //Nur die Namen werden eingespeichert!
 
 
 async function getPokemonData() {
@@ -13,6 +16,8 @@ async function getPokemonData() {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
         let pokemon = await response.json();
+
+        allPokemonNames.push(pokemon.name); //Pokemon Namen in globales Array speichern!
 
         renderMyPokemon(pokemon, i);
 
@@ -154,9 +159,24 @@ function hideLoader(){
   document.getElementById("loader").classList.add("d_none");
 }
 
-
-
 function renderNextCards(){
   showLoader();
   getPokemonData();
 }
+
+
+
+
+
+function searchPokemon(){
+  let input = document.getElementById('search_field').value.toLowerCase();
+  let filteredPokemon = allPokemonNames.filter(name => name.startsWith(input));
+
+  if (filteredPokemon.length > 0) {
+    console.log(filteredPokemon);
+    //Renderfunktion gefilterte Pokemons:
+   } else {
+    //Fehlermeldung für den User integrieren!
+      console.log('Kein Pokemon gefunden');
+    }
+  }
