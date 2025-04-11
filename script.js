@@ -155,18 +155,23 @@ function searchPokemon(){
     document.body.scroll = "no";
 
     //NEU:
-    if (index === 1) {
-      document.getElementById('left_arrow').classList.add("hidden_arrow");
-    } else {
-      document.getElementById('left_arrow').classList.remove("hidden_arrow");
-    }
+    // if (index === 1) {
+    //   document.getElementById('left_arrow').classList.add("hidden_arrow");
+    // } else {
+    //   document.getElementById('left_arrow').classList.remove("hidden_arrow");
+    // }
+
+
+    //NEUER:
+    handleArrowVisibility(index);
+
   }
   
 
   //NEU- Code nochmal erklären lassen:
   function navigateCard(newIndex) {
     const pokemon = allPokemonData.find(p => p.index === newIndex);
-    console.log(newIndex);
+    // console.log(newIndex);
     
     if (pokemon) {
       showDialogCard(
@@ -176,18 +181,41 @@ function searchPokemon(){
         pokemon.id
       );
     } else {
-      //Button links/rechts entfernen!?
       console.log("Keine weitere Karte verfügbar.");
       
       //NEU:
-      if (newIndex < 1) {
-        hideLeftArrow()
-      } else {
-        hideRightArrow();
-      }
+      // if (newIndex < 1) {
+      //   hideLeftArrow()
+      // } else if (newIndex > getLastCardIndex()) {
+      //   hideRightArrow();
+      // }
+
     }
   }
 
+
+  //NEUER:
+  function handleArrowVisibility(index) {
+    // Erster Index: Linken Pfeil ausblenden
+    if (index === 1) {
+        document.getElementById("left_arrow").classList.add("hidden_arrow");
+    } else {
+        document.getElementById("left_arrow").classList.remove("hidden_arrow");
+    }
+
+    // Letzter Index: Rechten Pfeil ausblenden
+    if (index === getLastCardIndex()) {
+        document.getElementById("right_arrow").classList.add("hidden_arrow");
+    } else {
+        document.getElementById("right_arrow").classList.remove("hidden_arrow");
+    }
+}
+
+
+  //NEU - Hilfsfunktion: Gibt den Index der letzten Karte zurück:
+  function getLastCardIndex() {
+    return allPokemonData.length; // Annahme: `allPokemonData` ist ein Array mit allen Karten
+  } 
 
 
   function hideLeftArrow(){
@@ -197,6 +225,8 @@ function searchPokemon(){
   function hideRightArrow(){
     document.getElementById('right_arrow').classList.add("hidden_arrow")
   }
+
+  
 
 
   function closeDialog() {
