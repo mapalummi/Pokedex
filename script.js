@@ -44,14 +44,12 @@ function renderMyPokemon(pokemon, index) {
   pokemonContent.innerHTML += /*html*/ `
             <div id="pokeCard${index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
               <div class="card_content">
-              <div class="id_container"><p>#${pokemon.id}</p></div>
-              <div class="name_container"><p>${pokemon.name}</p></div>
-
-              <div class="character_container">
-              <div id="type${index}" class="type_container"></div>
-              <img class="img_pokemon" src="${pokemon.sprites.front_default}">
-              </div>
-
+                <div class="id_container"><p>#${pokemon.id}</p></div>
+                  <div class="name_container"><p>${pokemon.name}</p></div>
+                <div class="character_container">
+                  <div id="type${index}" class="type_container"></div>
+                  <img class="img_pokemon" src="${pokemon.sprites.front_default}">
+                </div>
               </div>
             </div>
         `;    
@@ -95,11 +93,15 @@ function searchPokemon(){
         <div id="pokeCard${pokemon.index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
           <div class="card_content">
             <div class="id_container"><p>#${pokemon.id}</p></div>
-            <div class="name_container"><p>${pokemon.name}</p></div>
-            <div id="type${pokemon.index}" class="type_container">
-              ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
-            </div>
+              <div class="name_container"><p>${pokemon.name}</p></div>
+
+
+              <div id="type${pokemon.index}" class="type_container">
+                ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
+              </div>
             <div class="img_container"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
+
+
           </div>
         </div>
       `;
