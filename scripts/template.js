@@ -30,6 +30,7 @@ function getFilteredPokemonCards(pokemon, primaryTypeLocal){
       `;
 }
 
+//Template muss noch fertig gestellt werden:
 function getDialogCards(index, name, sprite, id){
     return `
       <div class="dialog">

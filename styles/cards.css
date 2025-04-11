@@ -64,3 +64,63 @@
     width: 150px;
     height: auto
   }
+
+
+  .dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgb(235, 250, 255);
+    border: 1px solid silver;
+    border-radius: 24px;
+    box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+    width: 300px;
+    height: 400px;
+    transition: opacity 300ms ease-in-out;
+    text-align: center;
+    animation: pulsate 3s infinite;
+    z-index: 15;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  
+  .dialog_name{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px black;
+    text-transform: capitalize;
+  }
+  
+  .dialog_id{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 1px 1px 2px black;
+  }
+  
+  .dialog_img{
+    width: 100px;
+    height: auto;
+  }
