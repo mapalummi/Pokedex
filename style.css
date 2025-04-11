@@ -33,6 +33,10 @@ h1 {
   display: none !important;
 }
 
+.hidden_arrow{
+  visibility: hidden;
+}
+
 #pokemon_content {
   width: 100%;
   height: 100vh;

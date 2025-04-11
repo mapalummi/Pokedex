@@ -41,6 +41,8 @@ async function getPokemonData() {
 function renderMyPokemon(pokemon, index) {
   const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
+
+  //Hier noch Template auslagern:
   pokemonContent.innerHTML += /*html*/ `
             <div id="pokeCard${index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
               <div class="card_content">
@@ -89,6 +91,8 @@ function searchPokemon(){
   
     filteredPokemon.forEach(pokemon => {
       const primaryTypeLocal = pokemon.types[0].type.name;
+
+      //Hier noch Template auslagern:
       container.innerHTML += /*html*/ `
         <div id="pokeCard${pokemon.index}" class="new_${primaryTypeLocal}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
           <div class="card_content">
@@ -109,8 +113,15 @@ function searchPokemon(){
 
   function showDialogCard(index, name, sprite, id) {
     let pokemonCard = document.getElementById("pokemon_dialog");
+
+    //Hier noch Template auslagern:
     pokemonCard.innerHTML = /*html*/ `
       <div class="dialog">
+
+
+          <div class="upper_dialog_container">
+            
+          </div>
 
 
                 <div>
@@ -120,14 +131,15 @@ function searchPokemon(){
                   <div id="type${index}"></div>
                 </div>
 
+
               <div class="arrow_container">
-                <div class="arrow_left" onclick="navigateCard(${index - 1})">
+                <div id="left_arrow" class="arrow_left" onclick="navigateCard(${index - 1})">
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
 
-                <div class="arrow_right" onclick="navigateCard(${index + 1})">
+                <div id="right_arrow" class="arrow_right" onclick="navigateCard(${index + 1})">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -144,10 +156,11 @@ function searchPokemon(){
   }
   
 
-  //NEU:
+  //NEU- Code nochmal erklären lassen:
   function navigateCard(newIndex) {
     const pokemon = allPokemonData.find(p => p.index === newIndex);
-  
+    console.log(newIndex);
+    
     if (pokemon) {
       showDialogCard(
         pokemon.index,
@@ -156,11 +169,21 @@ function searchPokemon(){
         pokemon.id
       );
     } else {
+      //Button links/rechts entfernen!?
       console.log("Keine weitere Karte verfügbar.");
+      hideLeftArrow();
     }
   }
 
 
+
+  function hideLeftArrow(){
+    document.getElementById('left_arrow').classList.add("hidden_arrow")
+  }
+
+  function hideRightArrow(){
+    document.getElementById('right_arrow').classList.add("hidden_arrow")
+  }
 
 
   function closeDialog() {
