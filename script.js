@@ -121,20 +121,18 @@ function searchPokemon(){
                 </div>
 
               <div class="arrow_container">
-                <div id="left" class="arrow_left">
+                <div class="arrow_left" onclick="navigateCard(${index - 1})">
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
 
-                <div id="right" class="arrow_right">
+                <div class="arrow_right" onclick="navigateCard(${index + 1})">
                   <span></span>
                   <span></span>
                   <span></span>
                 </div>
               </div>
-
-
 
               </div>
     `;
@@ -146,13 +144,23 @@ function searchPokemon(){
   }
   
 
-function onclickLeft(params) {
+  //NEU:
+  function navigateCard(newIndex) {
+    const pokemon = allPokemonData.find(p => p.index === newIndex);
   
-}
+    if (pokemon) {
+      showDialogCard(
+        pokemon.index,
+        pokemon.name,
+        pokemon.sprites.other.showdown.front_shiny,
+        pokemon.id
+      );
+    } else {
+      console.log("Keine weitere Karte verfügbar.");
+    }
+  }
 
-function onclickRight(params) {
-  
-}
+
 
 
   function closeDialog() {

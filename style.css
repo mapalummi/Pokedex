@@ -164,7 +164,7 @@ h1 {
 }
 
 .dialog_img{
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
@@ -180,7 +180,12 @@ h1 {
 }
 
 
+
 .arrow_left {
+  position: absolute;
+  left: 80px;
+  bottom: 20px;
+
   transform: translate(-50%, -50%);
   transform: rotate(90deg);
   cursor: pointer;
@@ -207,6 +212,10 @@ h1 {
 
 
 .arrow_right {
+  position: absolute;
+  right: 80px;
+  bottom: 20px;
+
   transform: translate(-50%, -50%);
   transform: rotate(270deg);
   cursor: pointer;
