@@ -6,7 +6,7 @@ function getPokemonCards(pokemon, index, primaryTypeLocal){
                   <div class="name_container"><p>${pokemon.name}</p></div>
                 <div class="character_container">
                   <div id="type${index}" class="type_container"></div>
-                  <img class="img_pokemon" src="${pokemon.sprites.front_default}">
+                  <img src="${pokemon.sprites.front_default}" class="responsive_img">
                 </div>
               </div>
             </div>
@@ -23,7 +23,7 @@ function getFilteredPokemonCards(pokemon, primaryTypeLocal){
               <div id="type${pokemon.index}" class="type_container">
                 ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
               </div>
-            <img class="img_pokemon" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="responsive_img">
             </div>
           </div>
         </div>

@@ -16,7 +16,8 @@ async function getPokemonData() {
       let response = await fetch(url);
       let pokemon = await response.json();
 
-      allPokemonData.push({ ...pokemon, index: i }); //In globales Array inkl. Indexwerte speichern!!!
+      //In globales Array inkl. Indexwerte speichern!!!
+      allPokemonData.push({ ...pokemon, index: i }); 
 
       renderMyPokemon(pokemon, i);
 
@@ -44,7 +45,7 @@ function renderMyPokemon(pokemon, index) {
   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryTypeLocal);
 }
 
-
+//ALT:
 // function searchPokemon() {
 //   let input = document.getElementById("search_field").value.toLowerCase();
 //   let filteredPokemon = allPokemonData.filter((pokemon) => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
