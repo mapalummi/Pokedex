@@ -94,14 +94,12 @@ function searchPokemon(){
           <div class="card_content">
             <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
-
-
+            <div class="character_container">
               <div id="type${pokemon.index}" class="type_container">
                 ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
               </div>
-            <div class="img_container"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
-
-
+            <img class="img_pokemon" src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+            </div>
           </div>
         </div>
       `;
@@ -113,12 +111,31 @@ function searchPokemon(){
     let pokemonCard = document.getElementById("pokemon_dialog");
     pokemonCard.innerHTML = /*html*/ `
       <div class="dialog">
-                <div class="">
-                  <p>${name}</p>
-                  <p>#${id}</p>
-                  <img src="${sprite}">
+
+
+                <div>
+                  <p class="dialog_name">${name}</p>
+                  <p class="dialog_id">#${id}</p>
+                  <img class="dialog_img" src="${sprite}">
                   <div id="type${index}"></div>
                 </div>
+
+              <div class="arrow_container">
+                <div id="left" class="arrow_left">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div id="right" class="arrow_right">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+
+
               </div>
     `;
     document.getElementById("pokemon_dialog").classList.remove("d_none");
@@ -128,6 +145,16 @@ function searchPokemon(){
     document.body.scroll = "no";
   }
   
+
+function onclickLeft(params) {
+  
+}
+
+function onclickRight(params) {
+  
+}
+
+
   function closeDialog() {
     document.getElementById("pokemon_dialog").classList.add("d_none");
     document.getElementById("body_overlay").classList.add("d_none");
