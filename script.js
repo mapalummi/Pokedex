@@ -153,6 +153,13 @@ function searchPokemon(){
   
     document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
+
+    //NEU:
+    if (index === 1) {
+      document.getElementById('left_arrow').classList.add("hidden_arrow");
+    } else {
+      document.getElementById('left_arrow').classList.remove("hidden_arrow");
+    }
   }
   
 
@@ -171,7 +178,13 @@ function searchPokemon(){
     } else {
       //Button links/rechts entfernen!?
       console.log("Keine weitere Karte verfügbar.");
-      hideLeftArrow();
+      
+      //NEU:
+      if (newIndex < 1) {
+        hideLeftArrow()
+      } else {
+        hideRightArrow();
+      }
     }
   }
 
