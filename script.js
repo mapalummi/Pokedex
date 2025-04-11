@@ -37,23 +37,7 @@ async function getPokemonData() {
     hideLoader();
 }
 
-// Alte Funktion:
-// function renderMyPokemon(pokemon, index) {
-//   let pokemonContent = document.getElementById("pokemon_content");
-//   pokemonContent.innerHTML += /*html*/ `
-//             <div id="pokeCard${index}" class="new_${primaryType}" onclick="showDialogCard(${index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
-//               <div class="card_content">
-//               <div class="id_container"><p>#${pokemon.id}</p></div>
-//               <div class="name_container"><p>${pokemon.name}</p></div>
-//               <div id="type${index}" class="type_container"></div>
-//               <div class="img_container"><img src="${pokemon.sprites.front_default}"></div>
-//               </div>
-//             </div>
-//         `;    
-// }
 
-
-//Neu:
 function renderMyPokemon(pokemon, index) {
   const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
@@ -62,28 +46,18 @@ function renderMyPokemon(pokemon, index) {
               <div class="card_content">
               <div class="id_container"><p>#${pokemon.id}</p></div>
               <div class="name_container"><p>${pokemon.name}</p></div>
+
+              <div class="character_container">
               <div id="type${index}" class="type_container"></div>
-              <div class="img_container"><img src="${pokemon.sprites.front_default}"></div>
+              <img class="img_pokemon" src="${pokemon.sprites.front_default}">
+              </div>
+
               </div>
             </div>
         `;    
 }
 
-//Alte Funktion:
-// function searchPokemon(){
-//   let input = document.getElementById('search_field').value.toLowerCase();
-//   let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
 
-//   if (filteredPokemon.length > 0) {
-//     renderFilteredPokemon(filteredPokemon);
-//    } else {
-//     //Fehlermeldung für den User integrieren!
-//       console.log('Kein Pokemon gefunden');
-//     }
-//   }
-
-
-//TEST:
 function searchPokemon(){
   let input = document.getElementById('search_field').value.toLowerCase();
   let filteredPokemon = allPokemonData.filter(pokemon => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
@@ -91,7 +65,7 @@ function searchPokemon(){
   if (filteredPokemon.length > 0) {
     renderFilteredPokemon(filteredPokemon);
    } else {
-      alert('Try another Letter');
+      console.log('Try another Letter');
     }
 
     if (input !== "") {
@@ -100,7 +74,6 @@ function searchPokemon(){
       enableButton()
   }
 }
-
 
 
   function disableButton() {
@@ -112,29 +85,6 @@ function searchPokemon(){
   }
 
 
-//Alte Funktion:
-  // function renderFilteredPokemon(filteredPokemon) {
-  //   const container = document.getElementById('pokemon_content');
-  //   container.innerHTML = '';
-  
-  //   filteredPokemon.forEach(pokemon => {
-  //     container.innerHTML += /*html*/ `
-  //       <div id="pokeCard${pokemon.index}" class="new_${primaryType}" onclick="showDialogCard(${pokemon.index}, '${pokemon.name}', '${pokemon.sprites.other.showdown.front_shiny}', ${pokemon.id})">
-  //         <div class="card_content">
-  //           <div class="id_container"><p>#${pokemon.id}</p></div>
-  //           <div class="name_container"><p>${pokemon.name}</p></div>
-  //           <div id="type${pokemon.index}" class="type_container">
-  //             ${pokemon.types.map(type => `<p>${type.type.name}</p>`).join('')}
-  //           </div>
-  //           <div class="img_container"><img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"></div>
-  //         </div>
-  //       </div>
-  //     `;
-  //   });
-  // }
-
-
-  //Neu:
   function renderFilteredPokemon(filteredPokemon) {
     const container = document.getElementById('pokemon_content');
     container.innerHTML = '';
