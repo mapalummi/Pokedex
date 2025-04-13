@@ -68,8 +68,6 @@
   box-shadow: 2px 3px rgba(0, 0, 0, 0.185);
 }
 
-
-/* Dialog - Karten: */
 .dialog {
   position: fixed;
   left: 50%;
@@ -364,7 +362,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: #5695A3;
+  background-color: #5695a3;
   border: 1px solid silver;
   border-radius: 24px;
   box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
@@ -393,10 +391,6 @@
   animation: pulsate 3s infinite;
   z-index: 15;
 }
-
-
-
-
 
 .dialog_id {
   width: 100%;
@@ -430,7 +424,6 @@
   height: auto;
 }
 
-
 .dialog_about_container {
   width: 100%;
   height: auto;
@@ -439,16 +432,13 @@
   background-color: white;
 }
 
-.dialog_about_container p{
-display: flex;
-justify-content: flex-start;
-padding-left: 8px;
+.dialog_about_container p {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 8px;
 }
 
-
-
-
-.arrow_container{
+.arrow_container {
   width: 100%;
   height: 30px;
   display: flex;
@@ -456,30 +446,28 @@ padding-left: 8px;
   align-items: center;
 }
 
-.arrow_left{
+.arrow_left {
   position: absolute;
   left: 40px;
   bottom: 20px;
 }
 
-.arrow_right{
+.arrow_right {
   position: absolute;
   right: 40px;
   bottom: 20px;
 }
 
-.arrow_img{
+.arrow_img {
   width: 70%;
   height: auto;
   opacity: 0.5;
 }
 
-.arrow_img:hover{
+.arrow_img:hover {
   cursor: pointer;
   opacity: unset;
 }
-
-
 
 @keyframes pulsate {
   0% {
@@ -493,23 +481,8 @@ padding-left: 8px;
   }
 }
 
-
-/* @keyframes animate {
-  0% {
-      opacity: 0;
-      transform: rotate(45deg) translate(-20px, -20px);
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-      transform: rotate(45deg) translate(20px, 20px);
-  }
-} */
-
 @media (max-width: 430px) {
-  .dialog{
+  .dialog {
     width: 250px;
     height: 400px;
   }

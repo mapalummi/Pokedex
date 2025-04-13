@@ -6,20 +6,15 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(white, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_card:hover {
   cursor: pointer;
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_grass {
@@ -30,23 +25,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(94, 189, 87), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(94, 189, 87), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_grass:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(127, 229, 76), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(127, 229, 76), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_fire {
@@ -57,23 +45,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(251, 165, 76), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(251, 165, 76), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_fire:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(253, 146, 33), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(253, 146, 33), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_water {
@@ -84,23 +65,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(83, 156, 222), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(83, 156, 222), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_water:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(54, 156, 246), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(54, 156, 246), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_poison {
@@ -111,23 +85,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(182, 99, 207), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(182, 99, 207), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_poison:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(184, 40, 228), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(184, 40, 228), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_bug {
@@ -138,23 +105,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(146, 188, 44), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(146, 188, 44), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_bug:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(166, 222, 35), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(166, 222, 35), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_normal {
@@ -165,23 +125,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(159, 162, 159), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(159, 162, 159), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_normal:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(128, 128, 128), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(128, 128, 128), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_electric {
@@ -192,23 +145,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(243, 217, 78), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(243, 217, 78), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_electric:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(250, 244, 65), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(250, 244, 65), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_ground {
@@ -219,23 +165,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(218, 124, 78), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(218, 124, 78), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_ground:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-  linear-gradient(rgb(234, 112, 50), white), 
-  linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(234, 112, 50), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_fairy {
@@ -246,23 +185,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(#ee90e6, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(#ee90e6, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_fairy:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(#e65eda, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(#e65eda, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_fighting {
@@ -273,23 +205,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(211, 66, 95), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(211, 66, 95), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_fighting:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(221, 46, 81), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(221, 46, 81), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_psychic {
@@ -300,23 +225,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(251, 133, 129), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(251, 133, 129), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_psychic:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(236, 102, 97), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(236, 102, 97), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_rock {
@@ -327,23 +245,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(201, 187, 138), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(201, 187, 138), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_rock:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(189, 169, 95), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(189, 169, 95), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_ghost {
@@ -354,23 +265,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(96, 109, 188), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(96, 109, 188), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_ghost:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(68, 82, 173), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(68, 82, 173), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_ice {
@@ -381,23 +285,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(117, 208, 193), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(117, 208, 193), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_ice:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(87, 189, 172), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(87, 189, 172), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_dragon {
@@ -408,23 +305,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(rgb(12, 105, 199), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(rgb(12, 105, 199), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_dragon:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(rgb(6, 91, 175), white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(rgb(6, 91, 175), white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_steel {
@@ -435,23 +325,16 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(#5695A3, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(#5695a3, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_steel:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(#5695A3, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(#5695a3, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }
 
 .new_dark {
@@ -462,21 +345,14 @@
   border: 3px solid transparent;
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  background-image: 
-    linear-gradient(#595761, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 
-              0 0 15px rgba(147, 51, 234, 0.3);
+  background-image: linear-gradient(#595761, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .new_dark:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-image: 
-    linear-gradient(#595761, white), 
-    linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(147, 51, 234, 0.6),
-              0 0 35px rgba(6, 182, 212, 0.4);
+  background-image: linear-gradient(#595761, white), linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(147, 51, 234, 0.6), 0 0 35px rgba(6, 182, 212, 0.4);
 }

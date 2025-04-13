@@ -2,7 +2,6 @@ let currentOffset = 1;
 let pokemonInputValue;
 let allPokemonData = [];
 
-
 function init() {
   showLoader();
   getPokemonData();
@@ -54,7 +53,6 @@ async function getPokemonData() {
   hideLoader();
 }
 
-
 function renderMyPokemon(pokemon, index) {
   const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
@@ -65,7 +63,7 @@ function renderMyPokemon(pokemon, index) {
 //TEST:
 function searchPokemon() {
   let input = document.getElementById("search_field").value.toLowerCase();
-  let info = document.getElementById('info_field');
+  let info = document.getElementById("info_field");
   info.innerHTML = "";
 
   // Wenn das Eingabefeld leer ist, rendere die ursprünglichen Pokémon-Daten
@@ -78,16 +76,16 @@ function searchPokemon() {
   if (input.length >= 3) {
     let filteredPokemon = allPokemonData.filter((pokemon) => pokemon && pokemon.name && pokemon.name.toLowerCase().startsWith(input));
 
-  if (filteredPokemon.length > 0) {
-    renderFilteredPokemon(filteredPokemon);
-  } else {
+    if (filteredPokemon.length > 0) {
+      renderFilteredPokemon(filteredPokemon);
+    } else {
       console.log("Try another Letter");
-      info.innerHTML += /*html*/`
+      info.innerHTML += /*html*/ `
         <p>Try another Letter!</p>
       `;
     }
-  } else if (input.length > 0){
-    info.innerHTML += /*html*/`
+  } else if (input.length > 0) {
+    info.innerHTML += /*html*/ `
       <p>Please enter at least 3 letters to search!</p>
     `;
   }
@@ -99,16 +97,13 @@ function searchPokemon() {
   }
 }
 
-
 function disableButton() {
   document.getElementById("loadButton").disabled = true;
 }
 
-
 function enableButton() {
   document.getElementById("loadButton").disabled = false;
 }
-
 
 function renderFilteredPokemon(filteredPokemon) {
   const container = document.getElementById("pokemon_content");
@@ -133,11 +128,21 @@ function showDialogCard(index, name, sprite, id) {
     console.error(`Pokemon mit Index ${index} nicht gefunden.`);
     return;
   }
-  
+
   let pokemonCard = document.getElementById("pokemon_dialog");
- 
+
   //Inhalte Dialogkarte:
-  pokemonCard.innerHTML += getDialogCards(index, name, sprite, id, pokemon.genus, pokemon.weight, pokemon.height, pokemon.abilities, primaryTypeLocal);
+  pokemonCard.innerHTML += getDialogCards(
+    index,
+    name,
+    sprite,
+    id,
+    pokemon.genus,
+    pokemon.weight,
+    pokemon.height,
+    pokemon.abilities,
+    primaryTypeLocal
+  );
 
   document.getElementById("pokemon_dialog").classList.remove("d_none");
   document.getElementById("body_overlay").classList.remove("d_none");
@@ -210,15 +215,13 @@ function hideLoader() {
   document.getElementById("loader").classList.add("d_none");
 }
 
-
-
 // Contentbegrenzung:
 function renderNextCards() {
   if (allPokemonData.length >= 150) {
-    console.log('LADE-ENDE');
-    alert("There's no more to load")
+    console.log("LADE-ENDE");
+    alert("There's no more to load");
   } else {
     showLoader();
     getPokemonData();
-  } 
+  }
 }

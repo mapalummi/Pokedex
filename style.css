@@ -1,16 +1,13 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
 }
-
-/* body{
-  min-height: 100vh;
-} */
 
 .wrapper {
   max-width: 1440px;
@@ -18,14 +15,13 @@ html, body {
   box-sizing: border-box;
 }
 
-
-header, #pokemon_content, footer {
+header,
+#pokemon_content,
+footer {
   padding: 15px;
 }
 
 header {
-  /* width: 100%; */
-
   height: 150px;
   background-color: white;
   display: flex;
@@ -35,36 +31,16 @@ header {
   box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.389);
 }
 
-.logo_img{
+.logo_img {
   width: 300px;
   height: auto;
 }
-
-/* h1 {
-  font-family: 'Pokemon Hollow', Arial, Helvetica, sans-serif;
-  color: black;
-  width: 300px;
-  height: 100px;
-  font-size: 64px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-block-start: 0;
-  margin-block-end: 8px;
-} */
-
-/* .textcolor {
-  background-image:linear-gradient(135deg, #d946ef, #3b82f6, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
- } */
 
 .d_none {
   display: none !important;
 }
 
-.hidden_arrow{
+.hidden_arrow {
   visibility: hidden;
 }
 
@@ -75,7 +51,6 @@ header {
   justify-content: center;
   gap: 16px;
 }
-
 
 .loader {
   width: 48px;
@@ -143,10 +118,6 @@ header {
   z-index: 10;
 }
 
-
-
-
-
 .input {
   color: black;
   border: 2px solid #8707ff;
@@ -160,15 +131,13 @@ header {
   box-shadow: 2px 2px 15px #8707ff inset;
 }
 
-
-#info_field p{
+#info_field p {
   color: red;
   font-size: 18px;
   text-align: center;
   margin-top: 0;
   margin-bottom: 8px;
 }
-
 
 button {
   color: #090909;
@@ -191,53 +160,44 @@ button:active {
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
 
-button:hover{
+button:hover {
   background: #9f9898;
 }
 
-
-
-footer{
-  /* width: 100%; */
-
+footer {
   background-color: #090909;
   color: white;
   text-align: center;
   padding: 10px;
 }
 
-
-
 @font-face {
-  font-family: 'Bangers';
-  src: url('./fonts/Bangers-Regular.ttf') format('truetype');
+  font-family: "Bangers";
+  src: url("./fonts/Bangers-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato-Regular.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato-Bold.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('./fonts/Lato-Italic.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./fonts/Lato-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
-
-
-
 
 @media (max-width: 1024px) {
   h1 {
@@ -245,8 +205,8 @@ footer{
   }
 }
 
-@media (max-width: 780px){
-  .logo_img{
+@media (max-width: 780px) {
+  .logo_img {
     width: 200px;
     height: auto;
   }
@@ -266,12 +226,11 @@ footer{
   }
 }
 
-
 @media (max-width: 430px) {
-  h1{
+  h1 {
     font-size: 45px;
   }
-  .dialog{
+  .dialog {
     width: 100px;
     height: 400px;
   }
