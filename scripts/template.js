@@ -32,12 +32,8 @@ function getFilteredPokemonCards(pokemon, primaryTypeLocal) {
       `;
 }
 
-// NEU:
 function getDialogCards(index, name, sprite, id, genus, weight, height, abilities, primaryTypeLocal) {
-  // const abilitiesHTML = abilities.map((a) => `<li>${a.ability.name}</li>`).join("");
-  // const abilitiesHTML = abilities.map((a) => `<p>${a.ability.name}</p>`).join("");
   const abilitiesHTML = abilities.map((a) => `<span>${a.ability.name}</span>`).join(",&nbsp;");
-
   return `
       <div class="dialog dialog_${primaryTypeLocal}">
         <div id="type${index}">Content</div>
@@ -46,25 +42,20 @@ function getDialogCards(index, name, sprite, id, genus, weight, height, abilitie
             <p class="dialog_name">${name}</p>
           <img class="dialog_img" src="${sprite}" alt="${name}" loading="lazy">
         </div>
-
         <div class="dialog_about_container">
           <p><b>Species:</b>&nbsp;${genus}</p>
             <p><b>Height:</b>&nbsp;${height} feet</p>
             <p><b>Weight:</b>&nbsp;${weight} pounds</p>
           <p><b>Abilitie(s):</b>&nbsp;${abilitiesHTML}</p>
         </div>
-
         <div class="arrow_container">
-
             <div id="left_arrow" class="arrow_left" onclick="navigateCard(${index - 1})">
               <img class="arrow_img" src="./assets/icons8-quadrat-links-50.png">
             </div>
-
             <div id="right_arrow" class="arrow_right" onclick="navigateCard(${index + 1})">
               <img class="arrow_img" src="./assets/icons8-quadrat-rechts-50.png">
             </div>
         </div>
-
       </div>
     `;
 }
