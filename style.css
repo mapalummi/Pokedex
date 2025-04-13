@@ -26,9 +26,15 @@ header {
   background-color: white;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.389);
+}
+
+.logo_input_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .logo_img {
@@ -118,6 +124,13 @@ header {
   z-index: 10;
 }
 
+.input_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .input {
   color: black;
   border: 2px solid #8707ff;
@@ -137,6 +150,29 @@ header {
   text-align: center;
   margin-top: 0;
   margin-bottom: 8px;
+}
+
+.toggle_container {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle_icon {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle_icon:hover{
+  cursor: pointer;
+}
+
+.dark_mode_icon {
+  filter: invert(50%);
+}
+
+.dark_mode {
+  background-color: black;
+  color: white;
 }
 
 button {
@@ -233,5 +269,8 @@ footer {
   .dialog {
     width: 100px;
     height: 400px;
+  }
+  #info_field p {
+    font-size: 14px;
   }
 }

@@ -215,6 +215,15 @@ function hideLoader() {
   document.getElementById("loader").classList.add("d_none");
 }
 
+function toggleDarkMode(){
+  let contentSection = document.body;
+  let headerSection = document.getElementById("header");
+  let toggleIcon = document.getElementById("toggle_icon");
+   contentSection.classList.toggle("dark_mode");
+   headerSection.classList.toggle("dark_mode");
+   toggleIcon.classList.toggle("dark_mode_icon")
+}
+
 // Contentbegrenzung:
 function renderNextCards() {
   if (allPokemonData.length >= 150) {

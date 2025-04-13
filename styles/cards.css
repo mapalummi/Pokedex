@@ -420,8 +420,8 @@
 }
 
 .dialog_img {
-  width: 30%;
-  height: auto;
+  width: 100px;
+  height: 100px;
 }
 
 .dialog_about_container {
