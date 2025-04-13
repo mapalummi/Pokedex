@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -58,12 +58,16 @@ header {
 }
 
 .input {
-  color: black;
+  color: gray;
   border: 2px solid #8707ff;
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
   max-width: 190px;
+}
+
+.input:hover {
+  cursor: pointer;
 }
 
 .input:active {
@@ -84,13 +88,8 @@ header {
 }
 
 .toggle_icon {
-  width: 20px;
-  height: 20px;
-}
-
-.toggle_icon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   padding-bottom: 18px;
 }
 
@@ -104,7 +103,7 @@ header {
 
 .dark_mode {
   background-color: black;
-  color: white;
+  color: black;
 }
 
 #pokemon_content {
@@ -207,10 +206,20 @@ button:hover {
 }
 
 footer {
-  background-color: #090909;
+  background-color: black;
   color: white;
-  text-align: center;
-  padding: 10px;
+  font-size: 12px;
+  text-align: end;
+}
+
+footer p {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
 @font-face {
@@ -251,20 +260,6 @@ footer {
   .logo_img {
     width: 200px;
     height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    height: 120px;
-  }
-
-  h1 {
-    font-size: 48px;
-  }
-
-  #pokemon_content {
-    gap: 12px;
   }
 }
 
