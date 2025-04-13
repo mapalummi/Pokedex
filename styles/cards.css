@@ -69,7 +69,7 @@
 }
 
 
-
+/* Dialog - Karten: */
 .dialog {
   position: fixed;
   left: 50%;
@@ -95,7 +95,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  background-color: green;
+  background-color: rgb(94, 189, 87);
   border: 1px solid silver;
   border-radius: 24px;
   box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
@@ -107,25 +107,293 @@
   z-index: 15;
 }
 
+.dialog_fire {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(253, 146, 33);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_water {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(83, 156, 222);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_poison {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(182, 99, 207);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_bug {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(146, 188, 44);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_normal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(159, 162, 159);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_electric {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(243, 217, 78);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_ground {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(218, 124, 78);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_fairy {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #ee90e6;
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_fighting {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(211, 66, 95);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_psychic {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(251, 133, 129);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_rock {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(201, 187, 138);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_ghost {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(96, 109, 188);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_ice {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(117, 208, 193);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_dragon {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(12, 105, 199);
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
+.dialog_steel {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #5695A3;
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
-
-
-
-
+.dialog_dark {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #595761;
+  border: 1px solid silver;
+  border-radius: 24px;
+  box-shadow: 8px 8px 16px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  height: 400px;
+  transition: opacity 300ms ease-in-out;
+  text-align: center;
+  animation: pulsate 3s infinite;
+  z-index: 15;
+}
 
 
 
