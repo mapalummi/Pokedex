@@ -118,8 +118,7 @@ function showDialogCard(index, name, sprite, id) {
   }
 
   let pokemonCard = document.getElementById("pokemon_dialog");
-
-  pokemonCard.innerHTML += getDialogCards(
+  pokemonCard.innerHTML = getDialogCards(
     index,
     name,
     sprite,
@@ -133,7 +132,6 @@ function showDialogCard(index, name, sprite, id) {
 
   document.getElementById("pokemon_dialog").classList.remove("d_none");
   document.getElementById("body_overlay").classList.remove("d_none");
-
   document.documentElement.style.overflow = "hidden";
   document.body.scroll = "no";
 
@@ -180,7 +178,6 @@ function hideRightArrow() {
 function closeDialog() {
   document.getElementById("pokemon_dialog").classList.add("d_none");
   document.getElementById("body_overlay").classList.add("d_none");
-
   document.documentElement.style.overflow = "scroll";
   document.body.scroll = "yes";
 }

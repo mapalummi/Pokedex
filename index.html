@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="./styles/cards.css" />
     <link rel="stylesheet" href="./styles/colors.css" />
     <link rel="stylesheet" href="./styles/icons.css" />
-
-    <script src="script.js"></script>
-    <script src="./scripts/template.js"></script>
   </head>
 
   <body onload="init()">
@@ -36,7 +33,7 @@
       <div id="pokemon_content"></div>
       <span id="loader" class="loader d_none"></span>
       <button id="loadButton" onclick="renderNextCards()">Load more</button>
-      <div div id="loader_overlay" class="d_none"></div>
+      <div id="loader_overlay" class="d_none"></div>
       <div onclick="closeDialog()" id="body_overlay" class="d_none"></div>
       <div id="pokemon_dialog" class="dialog d_none"></div>
 
@@ -45,5 +42,8 @@
         <i>Icons von <a target="_blank" href="https://icons8.com">Icons8</a></i>
       </footer>
     </div>
+
+    <script src="script.js"></script>
+    <script src="./scripts/template.js"></script>
   </body>
 </html>
