@@ -30,50 +30,6 @@ function getFilteredPokemonCards(pokemon, primaryTypeLocal){
       `;
 }
 
-// ALT:
-// function getDialogCards(index, name, sprite, id){
-//     return `
-//       <div class="dialog">
-
-
-//           <div class="upper_dialog_container">
-            
-//           </div>
-          
-//           <div id="type${index}">Hier kommt noch Typ-Icon rein!</div>
-
-//                 <div>
-//                   <p class="dialog_name">${name}</p>
-//                   <p class="dialog_id">#${id}</p>
-//                   <img class="dialog_img" src="${sprite}">
-//                 </div>
-
-//                 <div>
-//                   <p>Species:</p>
-//                   <p>Height</p>
-//                   <p>Weight</p>
-//                   <p>Abilities</p>
-//                 </div>
-
-
-//               <div class="arrow_container">
-//                 <div id="left_arrow" class="arrow_left" onclick="navigateCard(${index - 1})">
-//                   <span></span>
-//                   <span></span>
-//                   <span></span>
-//                 </div>
-
-//                 <div id="right_arrow" class="arrow_right" onclick="navigateCard(${index + 1})">
-//                   <span></span>
-//                   <span></span>
-//                   <span></span>
-//                 </div>
-//               </div>
-
-//               </div>
-//     `;
-// }
-
 // NEU:
 function getDialogCards(index, name, sprite, id, genus, weight, height, abilities, primaryTypeLocal){
   // const abilitiesHTML = abilities.map((a) => `<li>${a.ability.name}</li>`).join("");

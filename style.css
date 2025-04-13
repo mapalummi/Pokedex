@@ -183,3 +183,13 @@ footer{
   text-align: center;
   padding: 10px;
 }
+
+@media (max-width: 430px) {
+  h1{
+    font-size: 45px;
+  }
+  .dialog{
+    width: 100px;
+    height: 400px;
+  }
+}

@@ -8,39 +8,6 @@ function init() {
   getPokemonData();
 }
 
-
-
-
-// ALT:
-// async function getPokemonData() {
-//   for (let i = currentOffset; i < currentOffset + 25; i++) {
-//     try {
-//       let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-//       let response = await fetch(url);
-//       let pokemon = await response.json();
-
-//       //In globales Array inkl. Indexwerte speichern!!!
-//       allPokemonData.push({ ...pokemon, index: i }); 
-
-//       renderMyPokemon(pokemon, i);
-
-//       let typeContent = document.getElementById(`type${i}`);
-//       for (let j = 0; j < pokemon.types.length; j++) {
-//         const element = pokemon.types[j];
-//         const pokemonType = element.type.name;
-
-//         typeContent.innerHTML += /*html*/ `
-//               <p>${pokemonType}</p>
-//             `;
-//       }
-//     } catch (error) {
-//       console.error(`Fehler beim Laden der Daten für Pokemon ${i}`, error);
-//     }
-//   }
-//   currentOffset += 25;
-//   hideLoader();
-// }
-
 // NEU:
 async function getPokemonData() {
   for (let i = currentOffset; i < currentOffset + 25; i++) {
@@ -88,16 +55,12 @@ async function getPokemonData() {
 }
 
 
-
-
 function renderMyPokemon(pokemon, index) {
   const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
 
   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryTypeLocal);
 }
-
-
 
 //TEST:
 function searchPokemon() {
@@ -141,9 +104,11 @@ function disableButton() {
   document.getElementById("loadButton").disabled = true;
 }
 
+
 function enableButton() {
   document.getElementById("loadButton").disabled = false;
 }
+
 
 function renderFilteredPokemon(filteredPokemon) {
   const container = document.getElementById("pokemon_content");
@@ -155,22 +120,6 @@ function renderFilteredPokemon(filteredPokemon) {
     container.innerHTML += getFilteredPokemonCards(pokemon, primaryTypeLocal);
   });
 }
-
-// ALT:
-// function showDialogCard(index, name, sprite, id) {
-//   let pokemonCard = document.getElementById("pokemon_dialog");
-
-//   pokemonCard.innerHTML = getDialogCards(index, name, sprite, id);
-
-//   document.getElementById("pokemon_dialog").classList.remove("d_none");
-//   document.getElementById("body_overlay").classList.remove("d_none");
-
-//   document.documentElement.style.overflow = "hidden";
-//   document.body.scroll = "no";
-
-//   //NEU:
-//   handleArrowVisibility(index);
-// }
 
 // NEU:
 function showDialogCard(index, name, sprite, id) {
@@ -199,23 +148,6 @@ function showDialogCard(index, name, sprite, id) {
   handleArrowVisibility(index);
 }
 
-
-
-
-
-
-//ALT
-// function navigateCard(newIndex) {
-//   const pokemon = allPokemonData.find((p) => p.index === newIndex);
-//   // console.log(newIndex);
-
-//   if (pokemon) {
-//     showDialogCard(pokemon.index, pokemon.name, pokemon.sprites.other.showdown.front_shiny, pokemon.id);
-//   } else {
-//     console.log("Keine weitere Karte verfügbar.");
-//   }
-// }
-
 // NEU:
 function navigateCard(newIndex) {
   const pokemon = allPokemonData.find((p) => p.index === newIndex);
@@ -229,8 +161,6 @@ function navigateCard(newIndex) {
     console.log("Keine weitere Karte verfügbar.");
   }
 }
-
-
 
 //NEU:
 function handleArrowVisibility(index) {
