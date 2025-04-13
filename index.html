@@ -15,11 +15,13 @@
   </head>
 
   <body onload="init()">
+
+    <div class="wrapper">
+
     <header>
-      <div>
-      </div>
       
-      <h1 class="textcolor">PokéDex</h1>
+      <div><img class="logo_img" src="./img/logo-header.png" alt=""></div>
+
       <div>
         <input id="search_field" onkeyup="searchPokemon()" placeholder="Search your Pokemon..." class="input" name="text" type="text" />
         <div id="info_field"></div>
@@ -35,5 +37,8 @@
     <div onclick="closeDialog()" id="body_overlay" class="d_none"></div>
     <div id="pokemon_dialog" class="dialog d_none"></div>
     <footer>Footer</footer>
+
+  </div>
+
   </body>
 </html>
