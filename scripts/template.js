@@ -53,17 +53,17 @@ function getDialogCards(index, name, sprite, id, genus, weight, height, abilitie
         </div>
 
 
+
+
+
         <div class="arrow_container">
+
             <div id="left_arrow" class="arrow_left" onclick="navigateCard(${index - 1})">
-              <span></span>
-                <span></span>
-              <span></span>
+              <img class="arrow_img" src="./assets/icons8-quadrat-links-50.png">
             </div>
 
             <div id="right_arrow" class="arrow_right" onclick="navigateCard(${index + 1})">
-              <span></span>
-                <span></span>
-              <span></span>
+              <img class="arrow_img" src="./assets/icons8-quadrat-rechts-50.png">
             </div>
         </div>
 
