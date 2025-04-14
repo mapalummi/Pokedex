@@ -50,7 +50,6 @@ async function getPokemonData() {
 function renderMyPokemon(pokemon, index) {
   const primaryTypeLocal = pokemon.types[0].type.name;
   let pokemonContent = document.getElementById("pokemon_content");
-
   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryTypeLocal);
 }
 
@@ -100,10 +99,8 @@ function enableButton() {
 function renderFilteredPokemon(filteredPokemon) {
   const container = document.getElementById("pokemon_content");
   container.innerHTML = "";
-
   filteredPokemon.forEach((pokemon) => {
     const primaryTypeLocal = pokemon.types[0].type.name;
-
     container.innerHTML += getFilteredPokemonCards(pokemon, primaryTypeLocal);
   });
 }
