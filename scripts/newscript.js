@@ -63,46 +63,117 @@ function renderPokemonTypes(types, index) {
   });
 }
 
+
+//Original:
+// function renderMyPokemon(pokemon, index) {
+//   const primaryType = pokemon.types[0].type.name;
+//   const pokemonContent = document.getElementById("pokemon_content");
+//   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
+// }
+
+
+//NEU - Types werden nicht korrekt gerendert!!!
 function renderMyPokemon(pokemon, index) {
   const primaryType = pokemon.types[0].type.name;
   const pokemonContent = document.getElementById("pokemon_content");
-  pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
+
+  // Füge Platzhalter hinzu
+  const placeholder = `<div class="pokemon-card-placeholder" id="placeholder-${index}"></div>`;
+  pokemonContent.innerHTML += placeholder;
+
+  // Ersetze Platzhalter mit vollständigem Inhalt
+  const card = getPokemonCards(pokemon, index, primaryType);
+  setTimeout(() => {
+     document.getElementById(`placeholder-${index}`).outerHTML = card;
+  }, 100); // Simuliertes Laden
 }
+
+
+
+
 
 function searchPokemon() {
   const input = document.getElementById("search_field").value.toLowerCase();
   const info = document.getElementById("info_field");
   info.innerHTML = "";
-  handleSearchInput(input, info);
-}
 
-function handleSearchInput(input, info) {
-  if (input === "") return resetSearch();
-  if (input.length >= 3) filterPokemon(input, info);
-  else info.innerHTML += `<p>Please enter at least 3 letters to search!</p>`;
+  if (input === "") {
+    resetSearch();
+  } else if (input.length >= 3) {
+    filterPokemon(input, info);
+  } else {
+    showShortInputMessage(info);
+  }
+
+  toggleLoadButtonState(input);
 }
 
 function resetSearch() {
   renderFilteredPokemon(allPokemonData);
-  enableButton();
+  enableButton(); // Button aktivieren, wenn keine Suche aktiv ist
 }
 
 function filterPokemon(input, info) {
-  const filtered = allPokemonData.filter(
-    (p) => p.name?.toLowerCase().startsWith(input)
-  );
-  if (filtered.length > 0) renderFilteredPokemon(filtered);
-  else info.innerHTML += `<p>Try another Letter!</p>`;
+  const filtered = allPokemonData.filter((p) => p.name?.toLowerCase().startsWith(input));
+
+  if (filtered.length > 0) {
+    renderFilteredPokemon(filtered);
+  } else {
+    info.innerHTML += `<p>Try another Letter!</p>`;
+  }
 }
 
+function showShortInputMessage(info) {
+  info.innerHTML += `<p>Please enter at least 3 letters to search!</p>`;
+}
+
+function toggleLoadButtonState(input) {
+  if (input === "" || input.length < 3) {
+    enableButton(); // Button aktivieren, wenn Suchfeld leer oder zu kurz ist
+  } else {
+    disableButton(); // Button deaktivieren, wenn eine gültige Suche aktiv ist
+  }
+}
+
+function disableButton() {
+  document.getElementById("loadButton").disabled = true;
+}
+
+function enableButton() {
+  document.getElementById("loadButton").disabled = false;
+}
+
+
+
+//Original:
+// function renderFilteredPokemon(filtered) {
+//   const container = document.getElementById("pokemon_content");
+//   container.innerHTML = "";
+//   filtered.forEach((p) => {
+//     const primaryType = p.types[0].type.name;
+//     container.innerHTML += getFilteredPokemonCards(p, primaryType);
+//   });
+// }
+
+//NEU:
 function renderFilteredPokemon(filtered) {
   const container = document.getElementById("pokemon_content");
   container.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+
   filtered.forEach((p) => {
-    const primaryType = p.types[0].type.name;
-    container.innerHTML += getFilteredPokemonCards(p, primaryType);
+     const primaryType = p.types[0].type.name;
+     const card = document.createElement("div");
+     card.innerHTML = getFilteredPokemonCards(p, primaryType);
+     fragment.appendChild(card);
   });
+
+  container.appendChild(fragment);
 }
+
+
+
+
 
 function showDialogCard(index, name, sprite, id) {
   const pokemon = allPokemonData.find((p) => p.index === index);
@@ -112,9 +183,7 @@ function showDialogCard(index, name, sprite, id) {
 
 function renderDialog(pokemon, index, name, sprite, id) {
   const primaryType = pokemon.types[0].type.name;
-  const dialog = getDialogCards(
-    index, name, sprite, id, pokemon.genus, pokemon.weight, pokemon.height, pokemon.abilities, primaryType
-  );
+  const dialog = getDialogCards(index, name, sprite, id, pokemon.genus, pokemon.weight, pokemon.height, pokemon.abilities, primaryType);
   document.getElementById("pokemon_dialog").innerHTML = dialog;
   toggleDialogVisibility();
   handleArrowVisibility(index);

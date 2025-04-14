@@ -110,6 +110,17 @@ header {
   padding: 16px;
 }
 
+
+/* NEU */
+.pokemon-card-placeholder {
+  width: 150px;
+  height: 200px;
+  background-color: #f0f0f0;
+}
+/* NEU */
+
+
+
 .loader {
   width: 48px;
   height: 48px;
