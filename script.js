@@ -8,10 +8,10 @@ function init() {
 }
 
 async function getPokemonBatch() {
-  for (let i = currentOffset; i < currentOffset + 25; i++) {
+  for (let i = currentOffset; i < currentOffset + 20; i++) {
     await fetchAndStorePokemon(i);
   }
-  currentOffset += 25;
+  currentOffset += 20;
   hideLoader();
 }
 
