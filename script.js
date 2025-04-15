@@ -63,10 +63,32 @@ function renderPokemonTypes(types, index) {
   });
 }
 
+//ALT:
+// function renderMyPokemon(pokemon, index) {
+//   const primaryType = pokemon.types[0].type.name;
+//   const pokemonContent = document.getElementById("pokemon_content");
+//   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
+// }
+
+//NEU - funktioniert anscheinend:
 function renderMyPokemon(pokemon, index) {
-  const primaryType = pokemon.types[0].type.name;
   const pokemonContent = document.getElementById("pokemon_content");
-  pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
+
+  // Karte existiert bereits?
+  if (document.getElementById(`pokemon_card_${index}`)) {
+    return;
+  }
+
+  const primaryType = pokemon.types[0].type.name;
+  const cardHTML = getPokemonCards(pokemon, index, primaryType);
+
+  // Neues Element erstellen
+  const cardElement = document.createElement("div");
+  cardElement.id = `pokemon_card_${index}`;
+  cardElement.innerHTML = cardHTML;
+
+  // Karte anhängen
+  pokemonContent.appendChild(cardElement);
 }
 
 function searchPokemon() {
