@@ -63,34 +63,11 @@ function renderPokemonTypes(types, index) {
   });
 }
 
-
-//Original:
-// function renderMyPokemon(pokemon, index) {
-//   const primaryType = pokemon.types[0].type.name;
-//   const pokemonContent = document.getElementById("pokemon_content");
-//   pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
-// }
-
-
-//NEU - Types werden nicht korrekt gerendert!!!
 function renderMyPokemon(pokemon, index) {
   const primaryType = pokemon.types[0].type.name;
   const pokemonContent = document.getElementById("pokemon_content");
-
-  // Füge Platzhalter hinzu
-  const placeholder = `<div class="pokemon-card-placeholder" id="placeholder-${index}"></div>`;
-  pokemonContent.innerHTML += placeholder;
-
-  // Ersetze Platzhalter mit vollständigem Inhalt
-  const card = getPokemonCards(pokemon, index, primaryType);
-  setTimeout(() => {
-     document.getElementById(`placeholder-${index}`).outerHTML = card;
-  }, 100); // Simuliertes Laden
+  pokemonContent.innerHTML += getPokemonCards(pokemon, index, primaryType);
 }
-
-
-
-
 
 function searchPokemon() {
   const input = document.getElementById("search_field").value.toLowerCase();
@@ -143,37 +120,20 @@ function enableButton() {
   document.getElementById("loadButton").disabled = false;
 }
 
-
-
-//Original:
-// function renderFilteredPokemon(filtered) {
-//   const container = document.getElementById("pokemon_content");
-//   container.innerHTML = "";
-//   filtered.forEach((p) => {
-//     const primaryType = p.types[0].type.name;
-//     container.innerHTML += getFilteredPokemonCards(p, primaryType);
-//   });
-// }
-
-//NEU:
 function renderFilteredPokemon(filtered) {
   const container = document.getElementById("pokemon_content");
   container.innerHTML = "";
   const fragment = document.createDocumentFragment();
 
   filtered.forEach((p) => {
-     const primaryType = p.types[0].type.name;
-     const card = document.createElement("div");
-     card.innerHTML = getFilteredPokemonCards(p, primaryType);
-     fragment.appendChild(card);
+    const primaryType = p.types[0].type.name;
+    const card = document.createElement("div");
+    card.innerHTML = getFilteredPokemonCards(p, primaryType);
+    fragment.appendChild(card);
   });
 
   container.appendChild(fragment);
 }
-
-
-
-
 
 function showDialogCard(index, name, sprite, id) {
   const pokemon = allPokemonData.find((p) => p.index === index);
