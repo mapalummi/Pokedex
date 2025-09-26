@@ -20,10 +20,10 @@ You can see the app live here:
 
 <img src="https://github.com/user-attachments/assets/5cf7c7a2-ccd9-4e6b-adbd-e581f3709ada" alt="Screenshot 2025-09-26 085346" width="600" />
 
-<p align="center">
+<div>
   <img src="https://github.com/user-attachments/assets/d0608b6f-ebdf-44a8-b7cf-12216b2457d6" alt="Screenshot 2025-09-26 084532" width="250" />
   <img src="https://github.com/user-attachments/assets/2d8efd9b-7436-4c41-874f-4e370075c396" alt="Screenshot 2025-09-26 084554" width="250" />
-</p>
+</div>
 
 
 ## Technologies
