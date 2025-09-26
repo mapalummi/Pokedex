@@ -18,8 +18,8 @@ You can see the app live here:
 
 ## Screenshots
 
-<img width="512" height="879" alt="Screenshot 2025-09-26 084532" src="https://github.com/user-attachments/assets/d0608b6f-ebdf-44a8-b7cf-12216b2457d6" />
-<img width="507" height="890" alt="Screenshot 2025-09-26 084554" src="https://github.com/user-attachments/assets/2d8efd9b-7436-4c41-874f-4e370075c396" />
+<img width="256"  alt="Screenshot 2025-09-26 084532" src="https://github.com/user-attachments/assets/d0608b6f-ebdf-44a8-b7cf-12216b2457d6" />
+<img width="254"  alt="Screenshot 2025-09-26 084554" src="https://github.com/user-attachments/assets/2d8efd9b-7436-4c41-874f-4e370075c396" />
 
 
 ## Technologies
